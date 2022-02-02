@@ -71,12 +71,12 @@ var getCompiledCommand = function getCompiledCommand(version, commands, des) {
 
     case "1.8.x":
       customCommands = "summon FallingSand ~ ~1 ~ {Block:redstone_block,";
-      var num = 3 + lines.Count;
+      var num = 3 + lines.length;
       customCommands = customCommands + getCustomCommand("command_block", "fill ~ ~0 ~1 ~ ~-" + num + " ~1 redstone_block", 2);
       customCommands = customCommands + getCustomCommand("command_block", "setblock ~ ~3 ~1 stone", 2);
 
       if (des) {
-        num = 7 + lines.Count;
+        num = 7 + lines.length;
         customCommands = customCommands + getCustomCommand("command_block", "setblock ~ ~4 ~ command_block 0 replace {Command:fill ~ ~2 ~ ~ ~-" + num + " ~1 air}", 2);
         num = 1;
       } else {
